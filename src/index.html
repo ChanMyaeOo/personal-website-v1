@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/f494066f73.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>CMO</title>
+</head>
+<body>
+    <!-- Navbar section -->
+    <div class="nav-container" id="navbar">
+        <div class="logo">
+            CHAN MYAE OO
+        </div>
+        <nav class="desk">
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">Work</a></li>
+                <li><a href="">Experience</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+
+        <nav class="mob">
+            <div class="icon-wrap">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </div>
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">Work</a></li>
+                <li><a href="">Experience</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Header section -->
+    <header class="v-header v-container">
+        <div class="v-wrap">
+            <video poster="../img/poster.png" src="../video/binary.mp4" autoplay loop muted></video>
+        </div>
+        <div class="v-overlay"></div>
+        <div class="v-content">
+            <div class="name"><span>HI, </span>I'M ChanMyaeOo</div>
+            <div class="career">&lt;&nbsp;Front End Web Developer&nbsp;/&gt;</div>
+            <div class="down-arrow"><i class="fas fa-chevron-down"></i></div>
+        </div>
+    </header>
+
+   
+
+    <script 
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous">
+    </script>
+    <script>
+
+        //Transparent sticky navbar
+        const navbar = document.getElementById("navbar");
+        window.onscroll = ()=>{
+            if(window.pageYOffset > 100){
+                navbar.style.background = "#000";
+            }else{
+                navbar.style.background = "transparent";
+            }
+        }
+
+        // JQuery Section for Responsive Humburger Navbar
+        $(document).ready(function(){
+            $(".fa-times").hide();
+
+            $(".fa-bars").click(function(){
+                $(this).hide();
+                $(".fa-times").show();
+                $(".mob ul").addClass("show-nav");
+                $(".nav-container").addClass("show-hr");
+            })
+
+            $(".fa-times").click(function(){
+                $(this).hide();
+                $(".fa-bars").show();
+                $(".mob ul").removeClass("show-nav");
+                $(".nav-container").removeClass("show-hr");
+            })
+        })
+    </script>
+</body>
+</html>
